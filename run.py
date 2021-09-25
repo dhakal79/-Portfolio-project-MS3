@@ -14,7 +14,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("coagulant_dose")
 
-pHRAW = SHEET.worksheet("pHRAW")
+pHRAW = SHEET.worksheet("pHRAW2")
 
 data = pHRAW.get_all_values()
 print(data)
