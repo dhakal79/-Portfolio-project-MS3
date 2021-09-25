@@ -21,8 +21,21 @@ print(data)
 """
 def get_exp_data():
     print("Please enter lab experimental data")
-    print("data shour be three numbers separated by commas")
+    print("data should be three numbers separated by commas")
     print("Example:0,7.5,105\n")
     data_str = input("Enter your data here:")
-    print(f"The data provided is {data_str}")
+
+    exp_data = data_str.split(",")
+    validate_data(exp_data)
+
+def validate_data(values):
+
+    try:
+        if len(values) != 3:
+            raise ValueError(
+                f"Exactly 3 values are required, you provided {len(values)}")
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again\n")
+        
 get_exp_data()
