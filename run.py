@@ -43,22 +43,3 @@ def find_optimum(ph_values, res_values):
             return i
     return None
 
-# 'get the optimum dose for each conditions'
-
-
-def plot_sheet(sheet_name):
-    data = get_exp_data_from_google(sheet_name)
-    # 'validate the data'
-    try:
-        cog, ph, res = validate(data)
-        optimum_row = find_optimum(ph, res)
-        if optimum_row is not None:
-            print(f"Optimum dose {cog[optimum_row]} for {sheet_name}")
-    except ValueError:
-        print("Data is not valid !")
-
-
-plot_sheet('pHRAW')
-plot_sheet('pHRAW2')
-plot_sheet('pHRAW3')
-plot_sheet('pHRAW4')
