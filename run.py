@@ -13,36 +13,52 @@ CREDS = Credentials.from_service_account_info(creds)
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("coagulant_dose")
-"""
-pHRAW = SHEET.worksheet("pHRAW2")
 
-data = pHRAW.get_all_values()
-print(data)
-"""
-def get_exp_data():
-    while True:
-        print("Please enter lab experimental data")
-        print("data should be three numbers separated by commas")
-        print("Example:0,7.5,105\n")
-        data_str = input("Enter your data here:")
+# ' get data from google sheet"
 
-        exp_data = data_str.split(",")
-        if validate_data(exp_data):
-            print("data is valid")
-            break
 
-    return exp_data
+def get_exp_data_from_google(sheet):
+    pHRAW = SHEET.worksheet(sheet)
+    data = pHRAW.get_all_values()
+    return data
+# 'validate the data in the google sheet'
 
-def validate_data(values):
 
+def validate(data):
+    # 'criteria:should be nummeric and positive except table heading'
+    coagulant_dose = []
+    pHCoag = []
+    res = []
+    for row in data[1:]:
+        coagulant_dose.append(float(row[0]))
+        pHCoag.append(float(row[1]))
+        res.append(float(row[2]))
+    return coagulant_dose, pHCoag, res
+# 'find optimum coagulant dose from the experimental data'
+
+
+def find_optimum(ph_values, res_values):
+    for i, res in enumerate(res_values):
+        if res <= 2 and ph_values[i] >= 6 and ph_values[i] <= 7:
+            return i
+    return None
+
+# 'get the optimum dose for each conditions'
+
+
+def plot_sheet(sheet_name):
+    data = get_exp_data_from_google(sheet_name)
+    # 'validate the data'
     try:
-        [int(value) for value in values]
-        if len(values) != 3:
-            raise ValueError(
-                f"Exactly 3 values are required, you provided {len(values)}")
+        cog, ph, res = validate(data)
+        optimum_row = find_optimum(ph, res)
+        if optimum_row is not None:
+            print(f"Optimum dose {cog[optimum_row]} for {sheet_name}")
+    except ValueError:
+        print("Data is not valid !")
 
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")
-        return False
-    return True    
-get_exp_data()
+
+plot_sheet('pHRAW')
+plot_sheet('pHRAW2')
+plot_sheet('pHRAW3')
+plot_sheet('pHRAW4')
