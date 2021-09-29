@@ -111,4 +111,3 @@ def validate_data(values):
         return False
 
     return True
-
