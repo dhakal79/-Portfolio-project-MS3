@@ -92,6 +92,7 @@ def dose_calcualtion_data():
 
     return dose_data
 
+
 def validate_data(values):
     """
     Inside the try, converts all string values into integers.
