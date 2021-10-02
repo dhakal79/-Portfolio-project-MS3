@@ -59,6 +59,8 @@ def plot_sheet(sheet_name):
         print("Data is not valid ! Please check the data entry")
 
 # 'calculating the amount of coagulant dose for a give water flow'
+
+
 def get_dose_data():
     """
     Get dose calcualtion input from the user.
@@ -66,21 +68,25 @@ def get_dose_data():
     via the terminal, which must be a string of 6 numbers separated
     by commas. The loop will repeatedly request data, until it is valid.
     """
-
-    flowrate = input("Enter flow rate: \n")    
+    flowrate = input("Enter flow rate in m3/s: \n")    
     print(f"The data provided is {flowrate}")
-    storage_time = input("Enter storage time: \n")    
+    storage_time = input("Enter storage time in month: \n")    
     print(f"The data provided is {storage_time}")
     return flowrate, storage_time
 
 cog, pH = plot_sheet('pHRAW')
 flowrate, storage_time = get_dose_data()
 worksheet = SHEET.worksheet('dose')
-worksheet.update('A1',cog)
-worksheet.update('B1',pH)
-worksheet.update('C1',flowrate)
-worksheet.update('D1',storage_time)
-worksheet.update('E1',float(flowrate)*float(cog)*86.4)
+
+worksheet.update('C3', cog)
+worksheet.update('B3', pH)
+worksheet.update('A3', flowrate)
+worksheet.update('D3', storage_time)
+worksheet.update('E3', float(flowrate)*float(cog)*86.4)
+worksheet.update('F3', (float(flowrate)*float(cog)*864))
+worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
+worksheet.update('H3', (float(flowrate)*float(cog)*216))
+worksheet.update('I3', (float(flowrate)*float(cog)*0.216))
 
 plot_sheet('pHRAW2')
 plot_sheet('pHRAW3')
