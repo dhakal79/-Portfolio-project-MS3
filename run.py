@@ -77,11 +77,29 @@ def get_dose_data():
 cog, pH = plot_sheet('pHRAW')
 flowrate, storage_time = get_dose_data()
 worksheet = SHEET.worksheet('dose')
+row_number = input('please which row number you want to change? ')
+while True:
+    try:
+        row_number = int(row_number)
+    except:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change? ') 
+    if row_number in [1,2]:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change? ')
+        continue
+    if row_number < 100:
+        print(f"your row number is {row_number}")
+        row_number = str(row_number)
+        break
+    else:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change? ') 
 
-worksheet.update('C3', cog)
-worksheet.update('B3', pH)
-worksheet.update('A3', flowrate)
-worksheet.update('D3', storage_time)
+worksheet.update('C'+ row_number, cog)
+worksheet.update('B'+ row_number, pH)
+worksheet.update('A' + row_number, flowrate)
+worksheet.update('D' + row_number, storage_time)
 worksheet.update('E3', float(flowrate)*float(cog)*86.4)
 worksheet.update('F3', (float(flowrate)*float(cog)*864))
 worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
