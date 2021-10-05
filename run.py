@@ -60,7 +60,7 @@ def plot_sheet(sheet_name):
         cog, ph, res = validate(data)
         optimum_row = find_optimum(ph, res)
         if optimum_row is not None:
-            print(f"Optimum dose {cog[optimum_row]} for {sheet_name}")
+            print(f" Optimum dose is {cog[optimum_row]} for {sheet_name}")
             return cog[optimum_row], ph[optimum_row]
     except ValueError:
         print("Data is not valid ! Please check the data entry")
@@ -75,26 +75,27 @@ def get_dose_data():
     via the terminal, which must be a string of 6 numbers separated
     by commas. The loop will repeatedly request data, until it is valid.
     """
-    flowrate = input("Enter flow rate in m3/s: \n")    
+    flowrate = input("Enter flow rate in m3/s:\n")    
     print(f"The data provided is {flowrate}")
-    storage_time = input("Enter storage time in month: \n")    
+    storage_time = input("Enter storage time in month:\n")    
     print(f"The data provided is {storage_time}")
     return flowrate, storage_time
+
 
 cog, pH = plot_sheet('pHRAW')
 flowrate, storage_time = get_dose_data()
 worksheet = SHEET.worksheet('dose')
-row_number = input('please which row number you want to change? ')
+row_number = input('please which row number you want to change?')
 
 while True:
     try:
         row_number = int(row_number)
-    except:
+    except Exception:
         print('invalid row number input')
-        row_number = input('please which row number you want to change? \n') 
-    if row_number in [1,2]:
+        row_number = input('please which row number you want to change?\n') 
+    if row_number in [1, 2]:
         print('invalid row number input')
-        row_number = input('please which row number you want to change? /n')
+        row_number = input('please which row number you want to change?/n')
         continue
     if row_number < 100:
         print(f"your row number is {row_number}")
@@ -104,8 +105,8 @@ while True:
         print('invalid row number input')
         row_number = input('please which row number you want to change?\n') 
 
-worksheet.update('C'+ row_number, cog)
-worksheet.update('B'+ row_number, pH)
+worksheet.update('C' + row_number, cog)
+worksheet.update('B' + row_number, pH)
 worksheet.update('A' + row_number, flowrate)
 worksheet.update('D' + row_number, storage_time)
 worksheet.update('E3', float(flowrate)*float(cog)*86.4)
@@ -114,6 +115,101 @@ worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
 worksheet.update('H3', (float(flowrate)*float(cog)*216))
 worksheet.update('I3', (float(flowrate)*float(cog)*0.216))
 
-plot_sheet('pHRAW2')
-plot_sheet('pHRAW3')
-plot_sheet('pHRAW4')
+cog, pH = plot_sheet('pHRAW2')
+flowrate, storage_time = get_dose_data()
+worksheet = SHEET.worksheet('dose')
+row_number = input('please which row number you want to change?')
+
+while True:
+    try:
+        row_number = int(row_number)
+    except Exception:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+    if row_number in [1, 2]:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?/n')
+        continue
+    if row_number < 100:
+        print(f"your row number is {row_number}")
+        row_number = str(row_number)
+        break
+    else:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+
+worksheet.update('C' + row_number, cog)
+worksheet.update('B' + row_number, pH)
+worksheet.update('A' + row_number, flowrate)
+worksheet.update('D' + row_number, storage_time)
+worksheet.update('E3', float(flowrate)*float(cog)*86.4)
+worksheet.update('F3', (float(flowrate)*float(cog)*864))
+worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
+worksheet.update('H3', (float(flowrate)*float(cog)*216))
+worksheet.update('I3', (float(flowrate)*float(cog)*0.216))
+
+cog, pH = plot_sheet('pHRAW3')
+flowrate, storage_time = get_dose_data()
+worksheet = SHEET.worksheet('dose')
+row_number = input('please which row number you want to change?')
+
+while True:
+    try:
+        row_number = int(row_number)
+    except Exception:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+    if row_number in [1, 2]:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?/n')
+        continue
+    if row_number < 100:
+        print(f"your row number is {row_number}")
+        row_number = str(row_number)
+        break
+    else:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+
+worksheet.update('C' + row_number, cog)
+worksheet.update('B' + row_number, pH)
+worksheet.update('A' + row_number, flowrate)
+worksheet.update('D' + row_number, storage_time)
+worksheet.update('E3', float(flowrate)*float(cog)*86.4)
+worksheet.update('F3', (float(flowrate)*float(cog)*864))
+worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
+worksheet.update('H3', (float(flowrate)*float(cog)*216))
+worksheet.update('I3', (float(flowrate)*float(cog)*0.216))
+
+cog, pH = plot_sheet('pHRAW4')
+flowrate, storage_time = get_dose_data()
+worksheet = SHEET.worksheet('dose')
+row_number = input('please which row number you want to change?')
+
+while True:
+    try:
+        row_number = int(row_number)
+    except Exception:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+    if row_number in [1, 2]:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?/n')
+        continue
+    if row_number < 100:
+        print(f"your row number is {row_number}")
+        row_number = str(row_number)
+        break
+    else:
+        print('invalid row number input')
+        row_number = input('please which row number you want to change?\n') 
+
+worksheet.update('C' + row_number, cog)
+worksheet.update('B' + row_number, pH)
+worksheet.update('A' + row_number, flowrate)
+worksheet.update('D' + row_number, storage_time)
+worksheet.update('E3', float(flowrate)*float(cog)*86.4)
+worksheet.update('F3', (float(flowrate)*float(cog)*864))
+worksheet.update('G3', (float(flowrate)*float(cog)*0.864))
+worksheet.update('H3', (float(flowrate)*float(cog)*216))
+worksheet.update('I3', (float(flowrate)*float(cog)*0.216))
