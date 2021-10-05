@@ -17,6 +17,13 @@ SHEET = GSPREAD_CLIENT.open("coagulant_dose")
 # ' get data from google sheet"
 
 
+def intro_app():
+    print('This app is about coagulant dose')
+
+
+intro_app()
+
+
 def get_exp_data_from_google(sheet):
     pHRAW = SHEET.worksheet(sheet)
     data = pHRAW.get_all_values()
@@ -78,15 +85,16 @@ cog, pH = plot_sheet('pHRAW')
 flowrate, storage_time = get_dose_data()
 worksheet = SHEET.worksheet('dose')
 row_number = input('please which row number you want to change? ')
+
 while True:
     try:
         row_number = int(row_number)
     except:
         print('invalid row number input')
-        row_number = input('please which row number you want to change? ') 
+        row_number = input('please which row number you want to change? \n') 
     if row_number in [1,2]:
         print('invalid row number input')
-        row_number = input('please which row number you want to change? ')
+        row_number = input('please which row number you want to change? /n')
         continue
     if row_number < 100:
         print(f"your row number is {row_number}")
@@ -94,7 +102,7 @@ while True:
         break
     else:
         print('invalid row number input')
-        row_number = input('please which row number you want to change? ') 
+        row_number = input('please which row number you want to change?\n') 
 
 worksheet.update('C'+ row_number, cog)
 worksheet.update('B'+ row_number, pH)
