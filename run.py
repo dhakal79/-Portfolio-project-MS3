@@ -131,8 +131,8 @@ def calculate_value(sheet_name, flowrate, storage_time):
 
 
 flowrate, storage_time = get_dose_data()
-calculate_value('pHRAW',flowrate, storage_time)
-calculate_value('pHRAW2',flowrate, storage_time)
-calculate_value('pHRAW3',flowrate, storage_time)
-calculate_value('pHRAW4',flowrate, storage_time)
+calculate_value('pHRAW', flowrate, storage_time)
+calculate_value('pHRAW2', flowrate, storage_time)
+calculate_value('pHRAW3', flowrate, storage_time)
+calculate_value('pHRAW4', flowrate, storage_time)
 
