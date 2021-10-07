@@ -92,15 +92,21 @@ def get_valid_input(message):
         try:
             # 'Convert it into integer'
             input_val = input(message)  
-            input_val = int(input_val)
-            break
+            input_val = int(input_val) 
+            if input_val > int(0):
+                break
+            else:
+                print("Enter value can't be zero or negative, try again")
         except ValueError:
             try:
                 # Convert it into float
-                input_val = float(input_val)
-                break
+                input_val = float(input_val) 
+                if input_val > float(0):
+                    break
+                else:
+                    print("Enter value can't be zero or negative, try again")
             except ValueError:
-                print('Please enter numeric value')
+                print('Please enter numeric value greater than 0')
     return input_val
 
 
