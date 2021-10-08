@@ -1,31 +1,44 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Optimum Coagulant dose from jar test](images/jartest.jpg)
 
-Welcome dhakal79,
+# Calculator optimum coagulant dose
+Welcome! [IHE Delft](http://un-ihe.org)
+## Introduction
+Globally, degradation of surface water quality due to the presence of physical, chemical and biological impurities is a major issue that makes surface water unsafe to drink. Therefore, treatment of surface water is essential to make it pathogen free, chemically safe, with no dirt solid matter and aesthetically acceptable. In this context, there is a strong need to understand the theoretical aspect of various treatment options, its design principle and operation. Among the various treatment steps, coagulation process is the first steps in the treatment where we add coagulant to agglomerate small particles to larger in order to allow them to settle in the next treatment steps. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The overall aim of this project is to make quiz app which allows to assess the knowledge of students in the topic of coagulation. This project is the continuation of the first project, which focused on giving theoretical content about the topic. 
 
-## Reminders
+A live website can be found [here](https://dhakal79.github.io/Portfolio-project-MS2/).
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![website preview](assets/images/screenshot.jpg)
 
-## Creating the Heroku app
+# Table of Contents
+ [1. About the coagulant calculaor app](#coagulant-app)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+ [2. How does the app works?](#play-app)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+ [3. Features](#features)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ [4. User Expereince (UX) design](#ux)
+  - [User Goals:](#user-goals)
+  - [User Expectations:](#user-expectations)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+ [5. Flow chart](#flow-chart)
 
-Connect your GitHub repository and deploy as normal.
+ [6.Technologies used](#technologies-used)
 
-## Constraints
+ [7.Testing](#testing)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+ [8.Bugs](#bugs)
 
------
-Happy coding!
+ [9. Deployment](#deployment)
+
+ [10. Acknowledgement](#acknowledgement)
+
+  <a name="coagulant-app"></a>
+# 1. About the coagulant calculaor app
+  [Go to the top](#table-of-contents)
+
+
+  <a name="play-app"></a>
+# 2. How does the app works?
+  [Go to the top](#table-of-contents)
