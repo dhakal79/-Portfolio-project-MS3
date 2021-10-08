@@ -18,7 +18,15 @@ SHEET = GSPREAD_CLIENT.open("coagulant_dose")
 
 
 def intro_app():
-    print('This app is about coagulant dose')
+    print('What is this app about?')
+    print('i) This app is about optimum coagulant dose calculation')
+    print('ii) The optimum dose is calcualted based on lab result')
+    print('iii) Total cogulant dose is calculated based on user input value')
+    print('iv)Googlesheet has four worksheets: pHRAW, pHRAW2, pHRAW3, pHRAW4')
+    print('- pHRAW refers to experimental conidition 1 at pH = 7.0')
+    print('- pHRAW2 refers to experimental conidition 1 at pH = 7.5')
+    print('- pHRAW3 refers to experimental conidition 1 at pH = 8.0')
+    print('- pHRAW4 refers to experimental conidition 1 at pH = 8.5')
 
 
 intro_app()
@@ -72,12 +80,11 @@ def get_dose_data():
     """
     Get dose calcualtion input from the user.
     We run a while loop to collect a valid string of data from the user
-    via the terminal, which must be a string of 6 numbers separated
-    by commas. The loop will repeatedly request data, until it is valid.
+    via the terminal. The loop will repeatedly request data, until it is valid.
     """
     flowrate = get_valid_input("Enter flow rate in m3/s:\n")
     print(f"The data provided is {flowrate}")
-    storage_time = get_valid_input("Enter storage time in month:\n")    
+    storage_time = get_valid_input("Enter storage time in month:\n")
     print(f"The data provided is {storage_time}")
     return flowrate, storage_time
 
@@ -88,11 +95,11 @@ def next_available_row(worksheet):
 
 
 def get_valid_input(message):
-    while True:    
+    while True:
         try:
             # 'Convert it into integer'
-            input_val = input(message)  
-            input_val = int(input_val) 
+            input_val = input(message)
+            input_val = int(input_val)
             if input_val > int(0):
                 break
             else:
@@ -100,7 +107,7 @@ def get_valid_input(message):
         except ValueError:
             try:
                 # Convert it into float
-                input_val = float(input_val) 
+                input_val = float(input_val)
                 if input_val > float(0):
                     break
                 else:
@@ -135,4 +142,3 @@ calculate_value('pHRAW', flowrate, storage_time)
 calculate_value('pHRAW2', flowrate, storage_time)
 calculate_value('pHRAW3', flowrate, storage_time)
 calculate_value('pHRAW4', flowrate, storage_time)
-
