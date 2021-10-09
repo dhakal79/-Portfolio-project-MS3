@@ -11,7 +11,7 @@ The overall aim of this project is to make an app which allows to analyze the go
 
 A live website can be found [here](https://dhakal79.github.io/Portfolio-project-MS2/).
 
-![website preview](assets/images/screenshot.jpg)
+![website preview](images/screenshot.jpg)
 
 # Table of Contents
  [1. About the coagulant calculaor app](#coagulant-app)
