@@ -87,15 +87,17 @@ A live website can be found [here](https://dhakal79.github.io/Portfolio-project-
   PEP8 online validation tool was used to validate the code to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
   ![PEP* online validation](images/pep8_online.jpg)
 ## Mannual testing 
-
+## a) Google sheet
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Home page | on click to "Home", the browser redirects me to the home page. The hoever effect (green rectangular box) appears when mouse is on "home".| PASS
-Quiz page | on click to "quiz", the browser redirects me to the quiz page. The hoever effect (green rectangular box) appears when mouse is on "quiz". | PASS
-Feedback page| on click to "feedback page", the browser redirects me to the feedback page. The hoever effect (green rectangular box) appears when mouse is on "feedback page". | PASS
-Responsive | All pages and elements were responsive (mobile and website) using differnt breakpoints.| PASS
-Foreground & background  color| Checked foreground information is not distracted by backgrounds| PASS
-Text|Checked if all fonts and colors used are consistent or not|PASS
+Google sheet | checked if the data in the google sheet is not a float number except table heading, it gives an error message "Data is not valid ! Please check the data entry".| PASS
+
+## b) User input 
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+User input | checked if the data provided by user is not either integer or float or positive, it gives an error message "Please enter numeric value greater than 0" and "Enter value can't be zero or negative, try again" until the correct input is given| PASS
+Update google sheet | checked if the data in google sheet is updated or not based on the users input and app calcualtion| PASS
+Update google sheet | checked if the new data in google sheet is updated in the new row or not after each input from the user| PASS
 
 
 
