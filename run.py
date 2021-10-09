@@ -24,9 +24,9 @@ def intro_app():
     print('iii) Total cogulant dose is calculated based on user input value')
     print('iv)Googlesheet has four worksheets: pHRAW, pHRAW2, pHRAW3, pHRAW4')
     print('- pHRAW refers to experimental conidition 1 at pH = 7.0')
-    print('- pHRAW2 refers to experimental conidition 1 at pH = 7.5')
-    print('- pHRAW3 refers to experimental conidition 1 at pH = 8.0')
-    print('- pHRAW4 refers to experimental conidition 1 at pH = 8.5')
+    print('- pHRAW2 refers to experimental conidition 2 at pH = 7.5')
+    print('- pHRAW3 refers to experimental conidition 3 at pH = 8.0')
+    print('- pHRAW4 refers to experimental conidition 4 at pH = 8.5')
 
 
 intro_app()
