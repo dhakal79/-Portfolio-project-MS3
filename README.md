@@ -9,9 +9,9 @@ Theoretical calculation of the optimum coagulant dose is not possible. Therefore
 
 The overall aim of this project is to make an app which allows to analyze the google sheet data generated from the lab jar test experiments and calcualte the optimum coagulant dose. The app also allows the users to eneters the some plant operational data to calculate the total coagulant dose needed.
 
-A live website can be found [here](https://dhakal79.github.io/Portfolio-project-MS2/).
+A live website can be found [here](https://coagulant-dose-calculator.herokuapp.com/).
 
-![website preview](images/screenshot.jpg)
+![app preview](images/screenshot.jpg)
 
 # Table of Contents
  [1. About the coagulant calculaor app](#coagulant-app)
