@@ -99,9 +99,6 @@ User input | checked if the data provided by user is not either integer or float
 Update google sheet | checked if the data in google sheet is updated or not based on the users input and app calcualtion| PASS
 Update google sheet | checked if the new data in google sheet is updated in the new row or not after each input from the user| PASS
 
-
-
-
 <a name="bugs"></a>
 # 8. Bugs
   [Go to the top](#table-of-contents)
