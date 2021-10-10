@@ -35,7 +35,7 @@ intro_app()
 
 
 def get_exp_data_from_google(sheet):
-     """
+    """
     """
     pHRAW = SHEET.worksheet(sheet)
     data = pHRAW.get_all_values()
@@ -66,7 +66,7 @@ def find_optimum(ph_values, res_values):
 
 
 def get_optimum_value(sheet_name):
-     """
+    """
     """
     data = get_exp_data_from_google(sheet_name)
     # 'validate the data'
@@ -103,7 +103,7 @@ def next_available_row(worksheet):
 
 
 def get_valid_input(message):
-     """
+    """
     """
     while True:
         try:
@@ -128,7 +128,7 @@ def get_valid_input(message):
 
 
 def calculate_value(sheet_name, flowrate, storage_time):
-     """
+    """
     """
     cog, pH = get_optimum_value(sheet_name)
     worksheet = SHEET.worksheet('dose')
