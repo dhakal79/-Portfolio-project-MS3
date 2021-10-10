@@ -18,6 +18,8 @@ SHEET = GSPREAD_CLIENT.open("coagulant_dose")
 
 
 def intro_app():
+    """
+    """
     print('What is this app about?')
     print('i) This app is about optimum coagulant dose calculation')
     print('ii) The optimum dose is calcualted based on lab result')
@@ -33,6 +35,8 @@ intro_app()
 
 
 def get_exp_data_from_google(sheet):
+     """
+    """
     pHRAW = SHEET.worksheet(sheet)
     data = pHRAW.get_all_values()
     return data
@@ -62,6 +66,8 @@ def find_optimum(ph_values, res_values):
 
 
 def get_optimum_value(sheet_name):
+     """
+    """
     data = get_exp_data_from_google(sheet_name)
     # 'validate the data'
     try:
@@ -90,11 +96,15 @@ def get_dose_data():
 
 
 def next_available_row(worksheet):
+    """
+    """
     str_list = list(filter(None, worksheet.col_values(1)))
     return str(len(str_list)+1)
 
 
 def get_valid_input(message):
+     """
+    """
     while True:
         try:
             # 'Convert it into integer'
@@ -118,6 +128,8 @@ def get_valid_input(message):
 
 
 def calculate_value(sheet_name, flowrate, storage_time):
+     """
+    """
     cog, pH = get_optimum_value(sheet_name)
     worksheet = SHEET.worksheet('dose')
     row_number = next_available_row(worksheet)
@@ -133,8 +145,14 @@ def calculate_value(sheet_name, flowrate, storage_time):
     worksheet.update('I' + row_number, (float(flowrate)*float(cog)*0.216))
     worksheet.update('J' + row_number, sheet_name)
     row = worksheet.row_values(row_number)
-    print(worksheet.row_values(1))
-    print(row)
+    pretty_array = []
+    for item in worksheet.row_values(1):
+        pretty_array.append([item])
+    for i, item in enumerate(row):
+        pretty_array[i].append(item)
+    for row in pretty_array:
+        label, value = row
+        print(f'  - {label}: {value}')
 
 
 flowrate, storage_time = get_dose_data()
@@ -142,3 +160,10 @@ calculate_value('pHRAW', flowrate, storage_time)
 calculate_value('pHRAW2', flowrate, storage_time)
 calculate_value('pHRAW3', flowrate, storage_time)
 calculate_value('pHRAW4', flowrate, storage_time)
+
+
+def end_app():
+    print('Please click the run program to restart the app again')
+   
+
+end_app()
