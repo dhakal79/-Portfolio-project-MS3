@@ -19,6 +19,7 @@ SHEET = GSPREAD_CLIENT.open("coagulant_dose")
 
 def intro_app():
     """
+    explain what app is about
     """
     print('What is this app about?')
     print('i) This app is about optimum coagulant dose calculation')
@@ -36,6 +37,7 @@ intro_app()
 
 def get_exp_data_from_google(sheet):
     """
+    get data from google sheet
     """
     pHRAW = SHEET.worksheet(sheet)
     data = pHRAW.get_all_values()
@@ -44,7 +46,9 @@ def get_exp_data_from_google(sheet):
 
 
 def validate(data):
-    # 'criteria:should be nummeric and positive except table heading'
+    """
+    data validate with criteria of nummeric and positive except table heading
+    """
     coagulant_dose = []
     pHCoag = []
     res = []
@@ -53,23 +57,24 @@ def validate(data):
         pHCoag.append(float(row[1]))
         res.append(float(row[2]))
     return coagulant_dose, pHCoag, res
-# 'find optimum coagulant dose from the experimental data'
 
 
 def find_optimum(ph_values, res_values):
+    """
+    find optimum coagulant dose from the experimental data
+    """
     for i, res in enumerate(res_values):
         if res <= 2 and ph_values[i] >= 6 and ph_values[i] <= 7:
             return i
     return None
 
-# 'get the optimum dose for each conditions'
-
 
 def get_optimum_value(sheet_name):
     """
+    get optimum coagulant dose for all conditions
     """
     data = get_exp_data_from_google(sheet_name)
-    # 'validate the data'
+    # 'validate google sheet the data'
     try:
         cog, ph, res = validate(data)
         optimum_row = find_optimum(ph, res)
@@ -78,8 +83,6 @@ def get_optimum_value(sheet_name):
             return cog[optimum_row], ph[optimum_row]
     except ValueError:
         print("Data is not valid ! Please check the data entry")
-
-# 'calculating the amount of coagulant dose for a give water flow'
 
 
 def get_dose_data():
@@ -97,6 +100,7 @@ def get_dose_data():
 
 def next_available_row(worksheet):
     """
+    get next available row in the worksheet for the data input
     """
     str_list = list(filter(None, worksheet.col_values(1)))
     return str(len(str_list)+1)
@@ -104,6 +108,7 @@ def next_available_row(worksheet):
 
 def get_valid_input(message):
     """
+    validate the user input data
     """
     while True:
         try:
@@ -129,6 +134,7 @@ def get_valid_input(message):
 
 def calculate_value(sheet_name, flowrate, storage_time):
     """
+    calcualte based on the user input data
     """
     cog, pH = get_optimum_value(sheet_name)
     worksheet = SHEET.worksheet('dose')
@@ -163,7 +169,8 @@ calculate_value('pHRAW4', flowrate, storage_time)
 
 
 def end_app():
+    """
+    end of app and instruction for user if they want to restart again
+    """
     print('Please click the run program to restart the app again')
-   
-
-end_app()
+    end_app()
