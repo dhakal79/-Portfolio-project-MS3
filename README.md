@@ -19,6 +19,8 @@ A live app can be found [here](https://coagulant-dose-calculator.herokuapp.com/)
  [2. How does the app works?](#play-app)
 
  [3. Features](#features)
+ - [Existing features](#exist-feature)
+ - [future features](#future-feature)
 
  [4. User Expereince (UX) design](#ux)
   - [User Goals:](#user-goals)
@@ -49,21 +51,76 @@ A live app can be found [here](https://coagulant-dose-calculator.herokuapp.com/)
 # 3. Features
   [Go to the top](#table-of-contents)
 
+<a name="exist-feature"></a>
+## Existing Feature
+- App calcualtion is linked to the google sheet data. The google sheet access is given using google API.
+- Google sheet has four worksheet named phRAW, pHRAW2, pHRAW3, pHRAW4 where mainly the experimental data at differnt conditions are stored.The sheet also has worksheet name "dose" where mainly the data calcualted by app based on user input data will be stored.
+- App check the data input validation in the google sheet 
+
+![flowchart](images/google-sheet.jpg)
+
+- Explain what the app is about 
+- App ask user input data 
+![flowchart](images/feature-a.jpg)
+
+- User data validation and error checking
+  - Users has to enter either float or integer 
+  - data input cannot be zero or negative
+  - data input must be number
+
+![flowchart](images/user-validation.jpg)
+
+- App calcualtion
+  - App calcualte the optimum coagulant dose for all experimental conditions
+  - Based on the optimum dose calculated and user's input data, app calcualte the coagulant dose needed for differnt types of coagulants used
+![flowchart](images/app-calculation.jpg)
+
+<a name="future-feature"></a>
+## Future Feature
+ - Allow users to select option for choosing differnt coagulants types
+ - Allow users to have the design dimentions for coagulation units
+
    <a name="ux"></a>
 # 4. User Expereince (UX) design
   [Go to the top](#table-of-contents)
+
+  Dosing of coagulant (chemical) i.e. FeCl3 is needed to remove the fine particles from drinking water treatment. Moreover, overdosing of the chemicals will support for the resuspension of partcles and is also an environmental issues. Therefore, optimization of the coagulant dose based on the water qaulity is rather important which save cost and environment. This project is aimed to design the app which allows to calcualte the optimum coagulant dose based on the experimental data provided in google sheet and ultimately calcualte the total dose required depending upon the type of coagulant used. 
+
+The following users types can be benifitted from the app:
+
+- Drinking water treatment plant operators
+- Professionals dealing with water treatment designs.
+- Post graduate students in the field of water supply and environmental engineering.
 
    <a name="user-goals"></a>
 ## 4.1 User Goals
   [Go to the top](#table-of-contents)
 
+The main goal of this project is to develop a coagulant dose calcualtor app that allows to calcualte the optimum coagulant dose for diffent water types. This is of great useful for me to apply in my teaching for a demonstration in the laboratory session to my students.
+
+
+
   <a name ="user-expectations"></a>
 ## 4.2 User Expectations
   [Go to the top](#table-of-contents)
 
+The quiz app provides 15 multiple choice questions that allows the users to understanding their knowledge on topic "coagulation in drinking water treatment process". Folloiwng user's expections are considered while designing the site:
+
+- The quiz app is designed considering the expectation of users to be simple and easy to use.
+- The user interface is easy to navigate (inlcude main navigation bar, and a link at front page that direct to quiz page in just one click).
+- Quiz app that contains bank of questions with multiple choice options but users can only select one answer.
+- Quiz app has timer that alerts users to finish the quiz on time.
+- Quiz app has the function to show if the selected answer is correct or wrong and provide the score (correct and incorrect) at the bottom.
+- Quiz app provides overall score with feedback message at the end of the quiz and has an option to try again the quiz.
+- Responsive design for all screen/device sizes like mobile, tablet and desktop.
+- Feedback page provided where users can provide their comments and suggestion for future improvement
+
  <a name="flow-chart"></a>
 # 5. Flow Chart
   [Go to the top](#table-of-contents)
+
+Flow chart was used to conceptualise the optimum coagulant dose calcualtor idea. It was drawn using Lucid Chart. The flow diagram is as shown below.
+![flowchart](images/flowchart.jpg)
 
  <a name="technologies-used"></a>
 # 6. Technologies-used
