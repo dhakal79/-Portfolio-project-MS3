@@ -24,7 +24,7 @@ A live app can be found [here](https://coagulant-dose-calculator.herokuapp.com/)
 
  [4. User Expereince (UX) design](#ux)
   - [User Goals:](#user-goals)
-  - [User Expectations:](#user-expectations)
+  
 
  [5. Flow chart](#flow-chart)
 
@@ -104,22 +104,6 @@ The following users types can be benifitted from the app:
 The main goal of this project is to develop a coagulant dose calcualtor app that allows to calcualte the optimum coagulant dose for diffent water types. This is of great useful for me to apply in my teaching for a demonstration in the laboratory session to my students.
 
 
-
-  <a name ="user-expectations"></a>
-## 4.2 User Expectations
-  [Go to the top](#table-of-contents)
-
-The quiz app provides 15 multiple choice questions that allows the users to understanding their knowledge on topic "coagulation in drinking water treatment process". Folloiwng user's expections are considered while designing the site:
-
-- The quiz app is designed considering the expectation of users to be simple and easy to use.
-- The user interface is easy to navigate (inlcude main navigation bar, and a link at front page that direct to quiz page in just one click).
-- Quiz app that contains bank of questions with multiple choice options but users can only select one answer.
-- Quiz app has timer that alerts users to finish the quiz on time.
-- Quiz app has the function to show if the selected answer is correct or wrong and provide the score (correct and incorrect) at the bottom.
-- Quiz app provides overall score with feedback message at the end of the quiz and has an option to try again the quiz.
-- Responsive design for all screen/device sizes like mobile, tablet and desktop.
-- Feedback page provided where users can provide their comments and suggestion for future improvement
-
  <a name="flow-chart"></a>
 # 5. Flow Chart
   [Go to the top](#table-of-contents)
@@ -145,8 +129,9 @@ Flow chart was used to conceptualise the optimum coagulant dose calcualtor idea.
 <a name="testing"></a>
 # 7. Testing
   [Go to the top](#table-of-contents)
+
 ## PEP8 online validation
-  PEP8 online validation tool was used to validate the code to ensure there were no syntax errors or improper code indentation. It passed the test as seen in the screenshot below:
+  I have tested this project manually by passing the code through PEP8 online validation tool wand confirmed there are no errors. The screenshot is as shown below:
   ![PEP* online validation](images/pep8_online.jpg)
 ## Mannual testing 
 ## a) Google sheet
