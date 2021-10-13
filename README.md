@@ -75,6 +75,11 @@ A live app can be found [here](https://coagulant-dose-calculator.herokuapp.com/)
   - Based on the optimum dose calculated and user's input data, app calcualte the coagulant dose needed for differnt types of coagulants used
 ![flowchart](images/app-calculation.jpg)
 
+-Google data sheet update
+  - user's input data and app calcualted data is updated in the new row in the google sheet
+
+![flowchart](images/dose-calulation-.jpg)
+
 <a name="future-feature"></a>
 ## Future Feature
  - Allow users to select option for choosing differnt coagulants types
