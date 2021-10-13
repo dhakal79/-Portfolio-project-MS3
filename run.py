@@ -173,4 +173,6 @@ def end_app():
     end of app and instruction for user if they want to restart again
     """
     print('Please click the run program to restart the app again')
-    end_app()
+
+    
+end_app()
