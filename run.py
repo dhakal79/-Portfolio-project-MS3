@@ -10,14 +10,14 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
-
+"""
+Getting access to google data sheet
+"""
 creds = json.load(open('creds.json'))
 CREDS = Credentials.from_service_account_info(creds)
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("coagulant_dose")
-
-# ' get data from google sheet"
 
 
 def intro_app():
@@ -25,14 +25,14 @@ def intro_app():
     explain what app is about
     """
     print('What is this app about?')
-    print('i) This app is about optimum coagulant dose calculation')
-    print('ii) The optimum dose is calcualted based on lab result')
-    print('iii) Total cogulant dose is calculated based on user input value')
-    print('iv)Googlesheet has four worksheets: pHRAW, pHRAW2, pHRAW3, pHRAW4')
-    print('- pHRAW refers to experimental conidition 1 at pH = 7.0')
-    print('- pHRAW2 refers to experimental conidition 2 at pH = 7.5')
-    print('- pHRAW3 refers to experimental conidition 3 at pH = 8.0')
-    print('- pHRAW4 refers to experimental conidition 4 at pH = 8.5')
+    print('-This app is about optimum coagulant dose calculation')
+    print('-The optimum dose is calcualted based on lab result')
+    print('-Total coagulant dose is calculated based on user input value')
+    print('- Googlesheet has four worksheets: pHRAW, pHRAW2, pHRAW3, pHRAW4')
+    print('   - pHRAW refers to experimental conidition 1 at pH = 7.0')
+    print('   - pHRAW2 refers to experimental conidition 2 at pH = 7.5')
+    print('   - pHRAW3 refers to experimental conidition 3 at pH = 8.0')
+    print('   - pHRAW4 refers to experimental conidition 4 at pH = 8.5')
 
 
 intro_app()
@@ -45,7 +45,6 @@ def get_exp_data_from_google(sheet):
     pHRAW = SHEET.worksheet(sheet)
     data = pHRAW.get_all_values()
     return data
-# 'validate the data in the google sheet'
 
 
 def validate(data):
@@ -151,7 +150,8 @@ def calculate_value(sheet_name, frate, st_time):
     worksheet.update('G' + row_number, (float(frate)*float(cog)*0.864))
     worksheet.update('H' + row_number, (float(frate)*float(cog)*216))
     worksheet.update('I' + row_number, (float(frate)*float(cog)*0.216))
-    worksheet.update('J' + row_number, sheet_name)
+    worksheet.update('J' + row_number, (float(frate)*float(cog)*0.216*2700))
+    worksheet.update('K' + row_number, sheet_name)
     row = worksheet.row_values(row_number)
     pretty_array = []
     for item in worksheet.row_values(1):
