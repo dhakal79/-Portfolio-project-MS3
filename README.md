@@ -155,8 +155,13 @@ Update google sheet | checked if the new data in google sheet is updated in the 
   [Go to the top](#table-of-contents)
 
   The proejct was deployed to Heroku using the following steps:
-- Sign up to Heroku
-- 
+- Sign up to Heroku and give a unique name to the app
+- Inside the Heroku app page, go to the setting first and in the section config vars, add CREDS and paste entire creds.json file
+- Add buildpack python and node.js (python on top and node.js on bottom)
+- Go to the diploy section and select github and click connect to github
+- Search git hub repository name related to the project to be depoloyed and click connect 
+- Deploy to the branch (either mannual or automatic)
+
 
 
 <a name="acknowledgement"></a>
