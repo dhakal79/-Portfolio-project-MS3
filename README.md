@@ -42,20 +42,32 @@ A live app can be found [here](https://coagulant-dose-calculator.herokuapp.com/)
 # 1. About the coagulant calculaor app
   [Go to the top](#table-of-contents)
 
+This app is designed to calcualte the optimum coagulant dose that need to be applied in a water treatment plant based on the raw water quality.The app determine the optimum dose based on the laboratory data from google sheet. The app also calcualte the total amount ot dose needed based on the type of coagulant used, optimum dose and user input (flow rate and storage time of the coagulant). The app can be used by the plant operator, students and water supply engineering professonals.
 
   <a name="play-app"></a>
 # 2. How does the app works?
   [Go to the top](#table-of-contents)
+
+The app is simple to use. The credential to google data sheet is given to have an access to the data. The app validates the data input in the google sheet automatically. The users do not have to do anything to the google sheet.
+When the users run the program in the Heroku  app,
+- It first display the what the app is about.
+-  Ask user to enter flow rate in m3/s and storage time.
+- App validate the user's input (is data integer, float, and greater than 0).
+- If data is validate, the program runs but if data is not correct it ask users multiple time to provide correct input.
+- Calculate the optimum coagulant dose for all conditions.
+- App also calcuate total coagulant dose need for differnt optimum condition and users input of flow rate and storage time.
+- To run the programm again, user has to click again run the programme.
+
 
   <a name="features"></a>
 # 3. Features
   [Go to the top](#table-of-contents)
 
 <a name="exist-feature"></a>
-## Existing Feature
+## 3.1 Existing Feature
 - App calcualtion is linked to the google sheet data. The google sheet access is given using google API.
 - Google sheet has four worksheet named phRAW, pHRAW2, pHRAW3, pHRAW4 where mainly the experimental data at differnt conditions are stored.The sheet also has worksheet name "dose" where mainly the data calcualted by app based on user input data will be stored.
-- App check the data input validation in the google sheet 
+- App check the data input validation in the google sheet. 
 
 ![flowchart](images/google-sheet.jpg)
 
