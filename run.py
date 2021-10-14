@@ -133,7 +133,7 @@ def get_valid_input(message):
             except ValueError:
                 print('Please enter numeric value greater than 0')
 
-                
+
 def calculate_value(sheet_name, frate, st_time):
     """
     calcualte based on the user input data
@@ -144,13 +144,13 @@ def calculate_value(sheet_name, frate, st_time):
 
     worksheet.update('C' + row_number, cog)
     worksheet.update('B' + row_number, pH)
-    worksheet.update('A' + row_number, flowrate)
-    worksheet.update('D' + row_number, storage_time)
-    worksheet.update('E' + row_number, float(flowrate)*float(cog)*86.4)
-    worksheet.update('F' + row_number, (float(flowrate)*float(cog)*864))
-    worksheet.update('G' + row_number, (float(flowrate)*float(cog)*0.864))
-    worksheet.update('H' + row_number, (float(flowrate)*float(cog)*216))
-    worksheet.update('I' + row_number, (float(flowrate)*float(cog)*0.216))
+    worksheet.update('A' + row_number, frate)
+    worksheet.update('D' + row_number, st_time)
+    worksheet.update('E' + row_number, float(frate)*float(cog)*86.4)
+    worksheet.update('F' + row_number, (float(frate)*float(cog)*864))
+    worksheet.update('G' + row_number, (float(frate)*float(cog)*0.864))
+    worksheet.update('H' + row_number, (float(frate)*float(cog)*216))
+    worksheet.update('I' + row_number, (float(frate)*float(cog)*0.216))
     worksheet.update('J' + row_number, sheet_name)
     row = worksheet.row_values(row_number)
     pretty_array = []
