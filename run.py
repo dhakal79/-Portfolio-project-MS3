@@ -1,6 +1,9 @@
+"""
+this app is about coagulant dose
+"""
+import json
 import gspread
 from google.oauth2.service_account import Credentials
-import json
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -81,8 +84,10 @@ def get_optimum_value(sheet_name):
         if optimum_row is not None:
             print(f" Optimum dose is {cog[optimum_row]} for {sheet_name}")
             return cog[optimum_row], ph[optimum_row]
+        return None
     except ValueError:
         print("Data is not valid ! Please check the data entry")
+        return None
 
 
 def get_dose_data():
@@ -91,11 +96,11 @@ def get_dose_data():
     We run a while loop to collect a valid string of data from the user
     via the terminal. The loop will repeatedly request data, until it is valid.
     """
-    flowrate = get_valid_input("Enter flow rate in m3/s:\n")
-    print(f"The data provided is {flowrate}")
-    storage_time = get_valid_input("Enter storage time in month:\n")
-    print(f"The data provided is {storage_time}")
-    return flowrate, storage_time
+    frate = get_valid_input("Enter flow rate in m3/s:\n")
+    print(f"The data provided is {frate}")
+    st_time = get_valid_input("Enter storage time in month:\n")
+    print(f"The data provided is {st_time}")
+    return frate, st_time
 
 
 def next_available_row(worksheet):
@@ -116,23 +121,20 @@ def get_valid_input(message):
             input_val = input(message)
             input_val = int(input_val)
             if input_val > int(0):
-                break
-            else:
-                print("Enter value can't be zero or negative, try again")
+                return input_val
+            print("Enter value can't be zero or negative, try again")
         except ValueError:
             try:
                 # Convert it into float
                 input_val = float(input_val)
                 if input_val > float(0):
-                    break
-                else:
-                    print("Enter value can't be zero or negative, try again")
+                    return input_val
+                print("Enter value can't be zero or negative, try again")
             except ValueError:
                 print('Please enter numeric value greater than 0')
-    return input_val
 
-
-def calculate_value(sheet_name, flowrate, storage_time):
+                
+def calculate_value(sheet_name, frate, st_time):
     """
     calcualte based on the user input data
     """
