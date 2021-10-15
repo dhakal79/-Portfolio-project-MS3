@@ -213,7 +213,16 @@ If user's input data is validate, the program runs and calcualte the following:
 
 ![app_calculation](images/calculation.jpg)
 
-## 9.5 Re-start the program 
+## 9.5 Google data sheet update 
+All the new calcualtion and user's input data are updated in the google sheet 
+- no overwritten with previous data entry is allowed, 
+- data should be entered in new row
+- in each simualtion four rows will be added for four differnt types of experimental conditions (pHRAW, pHRAW2, pHRAW3 and pHRAW4)
+- Experimental condition is also recored in the last column to understand which data belong to what experiemntal condtions
+
+![google-update](images/google-update.jpg)
+
+## 9.6 Re-start the program 
 To run the programm again, user has to click again run the programme.
 
 
