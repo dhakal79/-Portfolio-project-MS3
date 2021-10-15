@@ -85,7 +85,7 @@ def get_optimum_value(sheet_name):
             return cog[optimum_row], ph[optimum_row]
         return None
     except ValueError:
-        print("Data is not valid ! Please check the data entry")
+        print("Google sheet data is not valid ! Please check the data entry")
         return None
 
 
