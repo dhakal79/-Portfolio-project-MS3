@@ -72,11 +72,7 @@ The main goal of this project is to develop a coagulant dose calcualtor app that
 Flow chart was used to conceptualise the optimum coagulant dose calcualtor idea. It was drawn using Lucid Chart. The flow diagram is as shown below.
 ![flowchart](images/flowchart.jpg)
 
- <a name="technologies-used"></a>
-
-
-
-  <a name="technologies-used"></a>
+<a name="features"></a>
 
 # 4. Features
   [Go to the top](#table-of-contents)
@@ -119,7 +115,9 @@ Flow chart was used to conceptualise the optimum coagulant dose calcualtor idea.
 In future i plan to update the app including more features such as;
  - Allow users to select option for choosing differnt types of coagulants like FeCl3, NaOCl, Al2SO4 etc
  - Provide users the basic dimension of the coagulation unit required for the given type of the water
- 
+
+<a name="technologies-used"></a>
+
 # 5. Technologies-used
   [Go to the top](#table-of-contents)
 
