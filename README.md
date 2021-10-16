@@ -76,7 +76,7 @@ Flow chart was used to conceptualise the optimum coagulant dose calcualtor idea.
 
 
 
-  <a name="features"></a>
+  <a name="technologies-used"></a>
 
 # 4. Features
   [Go to the top](#table-of-contents)
