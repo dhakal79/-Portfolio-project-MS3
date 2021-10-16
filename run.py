@@ -11,7 +11,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 """
-Getting access to google data sheet
+Getting access to googlesheet (inspired from lovesandwithces project)
 """
 creds = json.load(open('creds.json'))
 CREDS = Credentials.from_service_account_info(creds)
