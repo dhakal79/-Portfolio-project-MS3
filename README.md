@@ -164,7 +164,7 @@ Update google sheet data in new row | Checked if the data updated in the google 
 - When i wrote the project, i had most frequently indentation error as i forget to provide a tab
 - The data input by users and app calcualted results were overwritten in the google sheet with the previously recorded data. this was solved by writing a code to save the evry new data entry and app calcualtion in a new row.
 - When i wrote if statement, i forget to add colon at the end of if statement, which gave me unexpected indentation error. 
-- I want to display the calcualted data in bullt points in the app but it took all the data from google sheet (including headings and data). This was solved by using pretty_array package.
+- I want to display the calcualted data in bullet points in the app but it took all the data from google sheet (including headings and data). This was solved by using pretty_array package.
 
 ## 7.2 Unsolved bugs
 No bugs remaining 
