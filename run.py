@@ -1,5 +1,5 @@
 """
-this app is about coagulant dose
+this app is about optimum coagulant dose calcualtion
 """
 import json
 import gspread
